@@ -47,7 +47,7 @@
          </div>
          <div ng-repeat="salah_time in masjid.salah_times">
              <label for="name">{{salah_time.salah | titleize}}</label>
-             <span class="value">{{salah_time.time | date}}</span>
+             <span class="value">{{salah_time.time | date : shortTime}}</span>
          </div>
 
 
