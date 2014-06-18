@@ -1,6 +1,6 @@
 'use strict';
 
-angular
+var mismarUiApp = angular
   .module('mismarUiApp', [
     'ngCookies',
     'ngResource',
@@ -17,3 +17,11 @@ angular
         redirectTo: '/'
       });
   });
+
+mismarUiApp.filter("titleize", function() {
+  return function(input) {
+    console.log(input);
+    console.log(_);
+    return _.str.titleize(input);
+  };
+});
