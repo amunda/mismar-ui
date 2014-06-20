@@ -10,13 +10,29 @@ var mismarUiApp = angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        templateUrl: 'views/masjids.html',
+        controller: 'MasjidCtrl'
       })
       .otherwise({
         redirectTo: '/'
       });
-  });
+  })
+  .config(['$httpProvider', function ($httpProvider) {
+    // ...
+
+    // delete header from client:
+    // http://stackoverflow.com/questions/17289195/angularjs-post-data-to-external-rest-api
+    $httpProvider.defaults.useXDomain = true;
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
+  }]);
+
+mismarUiApp.factory('Masjid', function($resource, $http){
+
+  $http.defaults.useXDomain = true;
+
+  return $resource("http://mismar.herokuapp.com/masjids/:id");
+
+});
 
 mismarUiApp.filter("titleize", function() {
   return function(input) {

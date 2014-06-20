@@ -35,8 +35,8 @@
 <!--<p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>-->
 <!--</div>-->
 
-<div class="masajids">
-    <div class="masajid" ng-repeat="masjid in masajids" style="border:1px solid; padding:20px;">
+<div class="masjids">
+    <div class="masjid" ng-repeat="masjid in masjids" style="border:1px solid; padding:20px;">
         <div>
             <label for="name">Name:</label>
             <span class="value">{{masjid.name}}</span>
@@ -49,7 +49,5 @@
              <label for="name">{{salah_time.salah | titleize}}</label>
              <span class="value">{{salah_time.time | date : shortTime}}</span>
          </div>
-
-
     </div>
 </div>
