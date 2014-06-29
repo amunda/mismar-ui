@@ -5,7 +5,8 @@ var mismarUiApp = angular
     'ngCookies',
     'ngResource',
     'ngSanitize',
-    'ngRoute'
+    'ngRoute',
+    'config'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -25,14 +26,6 @@ var mismarUiApp = angular
     $httpProvider.defaults.useXDomain = true;
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
   }]);
-
-mismarUiApp.factory('Masjid', function($resource, $http){
-
-  $http.defaults.useXDomain = true;
-
-  return $resource("http://mismar.herokuapp.com/masjids/:id");
-
-});
 
 mismarUiApp.filter("titleize", function() {
   return function(input) {
