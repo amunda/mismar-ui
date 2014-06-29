@@ -1,7 +1,7 @@
 'use strict';
 
 mismarUiApp
-  .controller('MasjidCtrl', function ($scope, Masjid) {
+  .controller('MasjidCtrl', ['$scope','Masjid', function ($scope, Masjid) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -12,5 +12,5 @@ mismarUiApp
       console.log(data);
       $scope.masjids = data;
     });
-  });
+  }]);
 
