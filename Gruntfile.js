@@ -399,7 +399,7 @@ module.exports = function (grunt) {
         constants: {
           ENV: {
             name: 'production',
-            apiEndpoint: 'http://mismar.herokuaapp.com'
+            apiEndpoint: 'http://mismar.herokuapp.com/'
           }
         }
       }
