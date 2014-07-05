@@ -1,0 +1,48 @@
+
+.card {
+  padding:1.5rem;
+  box-shadow:0 1px 2px #aaa;
+  background:white;
+  margin:8px;
+  border-radius:3px;
+  user-select:none;
+  animation:fly-in-from-left .5s 1s ease both;
+  transform-origin:top left;
+
+  h1 {
+    font-size: 38px;
+    color: #F86F44;
+  }
+
+  .even-negative, .odd-positive {
+    display:none;
+  }
+
+  .status {
+    font-size:18px;
+    font-size:28px;
+    font-weight: 200;
+    letter-spacing: -1px;
+
+    &.positive {
+      color:#40A33F;
+    }
+
+    &.negative {
+      color:#7E7E7E;
+    }
+  }
+
+
+}
+.card:nth-child(even){
+  animation-name:fly-in-from-right;
+  animation-delay:1.1s;
+  transform-origin:top right;
+}
+
+// Junk Classes needed to be deleted after api supports proper statuses
+
+
+
+

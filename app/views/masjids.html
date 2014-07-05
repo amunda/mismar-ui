@@ -37,18 +37,25 @@
 
 
 
-<div class="list-group masjids">
-    <section class="list-group-item" ng-repeat="masjid in masjids">
-        <h4 class="list-group-item-heading">
+<div class="masjids">
+    <section class="card" ng-repeat="masjid in masjids">
+        <h1>
             {{masjid.name}}
-        </h4>
-        <p>
+        </h1>
+        <p style="font-size: 16px; color: #aaaaaa; font-weight: 200" >
             {{masjid.full_address}}
         </p>
+        <hr/>
+        <p ng-class-odd="'odd-positive'" ng-class-even="'even-positive'" class="status positive">
+            Next salah is Dhur in 10 minutes
+        </p>
 
-        <div ng-repeat="salah_time in masjid.salah_times">
-            <label for="name">{{salah_time.salah | titleize}}</label>
-            <span class="value">{{salah_time.formatted_time | date:'H:mm'}}</span>
-        </div>
+        <p ng-class-odd="'odd-negative'" ng-class-even="'even-negative'"  class="status negative">
+           You missed Dhur by 15 minutes
+        </p>
+        <!--<div ng-repeat="salah_time in masjid.salah_times">-->
+            <!--<label for="name">{{salah_time.salah | titleize}}</label>-->
+            <!--<span class="value">{{salah_time.formatted_time | date:'H:mm'}}</span>-->
+        <!--</div>-->
     </section>
 </div>
