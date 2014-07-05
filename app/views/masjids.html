@@ -35,19 +35,20 @@
 <!--<p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>-->
 <!--</div>-->
 
-<div class="masjids">
-    <div class="masjid" ng-repeat="masjid in masjids" style="border:1px solid; padding:20px;">
-        <div>
-            <label for="name">Name:</label>
-            <span class="value">{{masjid.name}}</span>
-        <div>
-        <div>
-            <label for="name">Address:</label>
-            <span class="value">{{masjid.full_address}}</span>
-         </div>
-         <div ng-repeat="salah_time in masjid.salah_times">
-             <label for="name">{{salah_time.salah | titleize}}</label>
-             <span class="value">{{salah_time.time | date : shortTime}}</span>
-         </div>
-    </div>
+
+
+<div class="list-group masjids">
+    <section class="list-group-item" ng-repeat="masjid in masjids">
+        <h4 class="list-group-item-heading">
+            {{masjid.name}}
+        </h4>
+        <p>
+            {{masjid.full_address}}
+        </p>
+
+        <div ng-repeat="salah_time in masjid.salah_times">
+            <label for="name">{{salah_time.salah | titleize}}</label>
+            <span class="value">{{salah_time.formatted_time | date:'H:mm'}}</span>
+        </div>
+    </section>
 </div>
