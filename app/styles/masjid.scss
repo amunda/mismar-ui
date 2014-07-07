@@ -1,5 +1,5 @@
 
-.card {
+.masjid {
   padding:1.5rem;
   box-shadow:0 1px 2px #aaa;
   background:white;
@@ -18,11 +18,16 @@
     display:none;
   }
 
+  .address {
+    font-size: 16px; color: #aaaaaa; font-weight: 200
+  }
+
   .status {
-    font-size:18px;
-    font-size:28px;
+    font-size: 27px;
     font-weight: 200;
     letter-spacing: -1px;
+    margin-top: 12px;
+    text-align: center;
 
     &.positive {
       color:#40A33F;
@@ -30,6 +35,25 @@
 
     &.negative {
       color:#7E7E7E;
+    }
+  }
+
+
+  .salah-times {
+    margin-top: 20px;
+    text-align: center;
+
+    .salah-time {
+
+      label {
+        padding-bottom: 4px;
+        color: #797979;
+        font-weight: 200;
+        font-size: 17px;
+      }
+      span {
+        font-size: 22px;
+      }
     }
   }
 

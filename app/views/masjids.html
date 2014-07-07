@@ -38,24 +38,29 @@
 
 
 <div class="masjids">
-    <section class="card" ng-repeat="masjid in masjids">
-        <h1>
-            {{masjid.name}}
-        </h1>
-        <p style="font-size: 16px; color: #aaaaaa; font-weight: 200" >
-            {{masjid.full_address}}
-        </p>
+    <div class="masjid " ng-repeat="masjid in masjids">
+        <div class="row">
+            <div class="col-md-8">
+                <h1> {{masjid.name}}</h1>
+                <div class="address">
+                    {{masjid.full_address}}
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div ng-class-odd="'odd-positive'" ng-class-even="'even-positive'" class="status positive">
+                   Dhur in 10 minutes
+                </div>
+                <div ng-class-odd="'odd-negative'" ng-class-even="'even-negative'"  class="status negative">
+                   Missed Dhur by 15 minutes
+                </div>
+            </div>
+        </div>
         <hr/>
-        <p ng-class-odd="'odd-positive'" ng-class-even="'even-positive'" class="status positive">
-            Next salah is Dhur in 10 minutes
-        </p>
-
-        <p ng-class-odd="'odd-negative'" ng-class-even="'even-negative'"  class="status negative">
-           You missed Dhur by 15 minutes
-        </p>
-        <!--<div ng-repeat="salah_time in masjid.salah_times">-->
-            <!--<label for="name">{{salah_time.salah | titleize}}</label>-->
-            <!--<span class="value">{{salah_time.formatted_time | date:'H:mm'}}</span>-->
-        <!--</div>-->
-    </section>
+        <div class="row salah-times">
+            <div class='col-md-15 col-sm-15 salah-time' ng-repeat="salah_time in masjid.salah_times">
+                <label for="name" style="display:block">{{salah_time.salah | titleize}}</label>
+                <span>{{salah_time.formatted_time | date:'H:mm'}}</span>
+            </div>
+        </div>
+    </div>
 </div>
