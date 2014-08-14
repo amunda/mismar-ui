@@ -57,9 +57,9 @@
         </div>
         <hr/>
         <div class="row salah-times">
-            <div class='col-md-15 col-sm-15 salah-time' ng-repeat="salah_time in masjid.salah_times">
+            <div class='col-md-15 col-sm-3 col-xs-3 salah-time' ng-repeat="salah_time in masjid.salah_times">
                 <label for="name" style="display:block">{{salah_time.salah | titleize}}</label>
-                <span>{{salah_time.formatted_time | date:'H:mm'}}</span>
+                <span>{{salah_time.formatted_time}}</span>
             </div>
         </div>
     </div>
