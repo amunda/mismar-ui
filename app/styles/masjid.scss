@@ -12,6 +12,11 @@
   h1 {
     font-size: 38px;
     color: #F86F44;
+    text-align: center;
+
+    @media (min-width: $screen-sm-min) {
+      text-align: left;
+    }
   }
 
   .even-negative, .odd-positive {
@@ -45,11 +50,25 @@
 
     .salah-time {
       padding-bottom: 10px;
+
       label {
+        dispay:inline;
         padding-bottom: 4px;
         color: #797979;
         font-weight: 200;
-        font-size: 17px;
+        width: 80px;
+        text-align: right;
+        margin-right: 20px;
+        font-size:20px;
+        vertical-align: top;
+        content: ":";
+
+        @media (min-width: $screen-sm-min) {
+          text-align: center;
+          margin-right: 0px;
+          font-size: 18px;
+
+        }
       }
       span {
         font-size: 22px;
