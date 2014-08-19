@@ -1,9 +1,13 @@
 
+
+@import "../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
+
+
 .masjid {
   padding:1.5rem;
-  box-shadow:0 1px 2px #aaa;
+  box-shadow:0 1px 2px #818181;
   background:white;
-  margin:8px;
+  margin:15px;
   border-radius:3px;
   user-select:none;
   animation:fly-in-from-left .5s 1s ease both;
@@ -24,7 +28,14 @@
   }
 
   .address {
-    font-size: 16px; color: #aaaaaa; font-weight: 200
+    font-size: 16px;
+    color: #aaaaaa;
+    font-weight: 200;
+    text-align: center;
+
+    @media (min-width: $screen-sm-min) {
+      text-align: left;
+    }
   }
 
   .status {
@@ -50,15 +61,15 @@
 
     .salah-time {
       padding-bottom: 10px;
+      padding-right: 70px;
 
       label {
-        dispay:inline;
         padding-bottom: 4px;
         color: #797979;
         font-weight: 200;
         width: 80px;
         text-align: right;
-        margin-right: 20px;
+        margin-right: 22px;
         font-size:20px;
         vertical-align: top;
         content: ":";
@@ -66,8 +77,7 @@
         @media (min-width: $screen-sm-min) {
           text-align: center;
           margin-right: 0px;
-          font-size: 18px;
-
+          font-size: 20px;
         }
       }
       span {
